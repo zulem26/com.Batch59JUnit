@@ -24,6 +24,7 @@ public class C01_Assertions {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver.get("https://www.amazon.com");
     }
     @AfterClass
     public static void tearDown(){
@@ -32,7 +33,7 @@ public class C01_Assertions {
 
     @Test
     public void test01(){
-        driver.get("https://www.amazon.com");
+
 
         //1- Url in amazon icerdigini test edin
         String arananKelime = "amazon";
