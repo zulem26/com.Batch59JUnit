@@ -1,10 +1,10 @@
 package day09_handleWindows_testBase;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import junit.framework.Assert;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

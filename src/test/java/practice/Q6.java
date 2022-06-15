@@ -1,7 +1,7 @@
 package practice;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import junit.framework.Assert;
+import org.junit.Assert;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -36,10 +36,7 @@ public class Q6 {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
 
-    @AfterClass
-    public static void tearDown(){
-        //driver.close();
-    }
+
 
     @Test
     public void test01(){
@@ -51,19 +48,15 @@ public class Q6 {
         Select options = new Select(ddm);
         options.selectByVisibleText("Books");
 
-        //kategorilerin hepsini konsola yazdiralim
-        //List<WebElement> tumOpsiyonlar = ddm.getOptions();
-        //for (WebElement each:tumOpsiyonlar){
-        //    System.out.println(each.getText());
-        //}
-
 
         // 3. Arama kutusuna Les Miserables yazalım ve arama yapalim.
         WebElement aramaKutusu = driver.findElement(By.id("twotabsearchtextbox"));
-        aramaKutusu.sendKeys("Miserables" + Keys.ENTER);
+        aramaKutusu.sendKeys("Les Miserables" + Keys.ENTER);
 
         // 4. Sonuc sayisini ekrana yazdiralim.
         System.out.println(driver.findElement(By.xpath("//div[@class='a-section a-spacing-small a-spacing-top-small'][1]")).getText());
+        //WebElement sonucSayisi = driver.findElement(By.xpath("//div[@class='a-section a-spacing-small a-spacing-top-small'][1]"));
+        //System.out.println(sonucSayisi.getText()); 1-16 of over 5,000 results for "Les Miserables"
 
 
         // 5. Sonucların Les Miserables i icerdigini assert edelim
@@ -72,5 +65,11 @@ public class Q6 {
         String arananKelime = "Miserables";
 
         Assert.assertTrue(sonucYazisiStr.contains(arananKelime));
+        //Assert.assertEquals("les Misrables icermez", sonucSayisi.getText().contains("Les Miserables"), true);
+    }
+
+    @AfterClass
+    public static void tearDown(){
+        //driver.close();
     }
 }

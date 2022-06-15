@@ -1,7 +1,7 @@
 package day12_senkronizasyon;
 
 import org.junit.Test;
-import org.junit.*;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;

@@ -41,6 +41,7 @@ public class C02_WebTables extends TestBase {
         // once email basliginin kacinci sutunda oldugunu bulalim
         List<WebElement> basliklarListesi=driver.findElements(By.xpath("//thead//tr[1]//th"));
         int emailSutunNo=0;
+        
         for (int i = 0; i < basliklarListesi.size() ; i++) {
             if (basliklarListesi.get(i).getText().equals("Email")){
                 emailSutunNo=i;
